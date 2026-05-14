@@ -1,16 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import DramaCard from "./DramaCard";
 
+const EMPTY_HISTORY = [];
+
+function subscribeToHistory(callback) {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
+}
+
+function getHistorySnapshot() {
+  try {
+    return JSON.parse(localStorage.getItem("watchHistory") || "[]");
+  } catch {
+    return EMPTY_HISTORY;
+  }
+}
+
 export default function ContinueWatching() {
-
-  const [history, setHistory] = useState([]);
-
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("watchHistory") || "[]");
-    setHistory(data);
-  }, []);
+  const history = useSyncExternalStore(
+    subscribeToHistory,
+    getHistorySnapshot,
+    () => EMPTY_HISTORY
+  );
 
   if (history.length === 0) return null;
 

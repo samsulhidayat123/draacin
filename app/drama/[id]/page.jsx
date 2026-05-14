@@ -1,4 +1,5 @@
 // app/drama/[id]/page.jsx
+import Image from "next/image";
 import Link from "next/link";
 
 const BASE_URL = "https://dramabox.sansekai.my.id/api/dramabox";
@@ -116,9 +117,12 @@ export default async function DramaDetail({ params }) {
 
             <div className="w-full md:w-[380px] shrink-0 p-8">
               <div className="aspect-[2/3] w-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-                <img
+                <Image
                   src={drama.coverWap || "/placeholder.png"}
                   alt={drama.bookName}
+                  width={380}
+                  height={570}
+                  sizes="(max-width: 768px) 100vw, 380px"
                   className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
                 />
               </div>

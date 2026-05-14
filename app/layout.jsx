@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 
 // Metadata SEO
 export const metadata = {
-  title: "Gerbang Cinema - Nonton Drama & Film Terbaru",
-  description: "Portal streaming drama dan film terbaru ala Netflix by Samsul.",
-  keywords: ["drama china", "dracin", "streaming drama", "film online"],
+  title: "Gudang Film",
+  description: "Portal streaming film terbaru dengan tampilan katalog ala Netflix by Samsul.",
+  keywords: ["film terbaru", "streaming film", "film online", "katalog film"],
   authors: [{ name: "Samsul Hidayat" }],
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
     >
       <body
         suppressHydrationWarning={true}
-        className="min-h-screen flex flex-col bg-[#141414] text-white"
+        className="flex min-h-screen flex-col bg-[#050505] text-white"
       >
 
         {/* Navbar Global */}
@@ -45,8 +45,8 @@ export default function RootLayout({ children }) {
         </main>
 
         {/* Footer */}
-        <footer className="text-center text-sm text-gray-400 py-5 border-t border-zinc-800">
-          © {new Date().getFullYear()} Gerbang Cinema — By Samsul
+        <footer className="border-t border-zinc-900 bg-black py-5 text-center text-sm text-zinc-500">
+          (c) {new Date().getFullYear()} Gudang Film - By Samsul
         </footer>
 
       </body>

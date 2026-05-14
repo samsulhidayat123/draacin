@@ -1,0 +1,951 @@
+{
+  "summary": {
+    "source": "idflix",
+    "scannedAt": "2026-05-14T12:11:25.069Z",
+    "total": 156,
+    "byType": {
+      "movie": 100,
+      "series": 24,
+      "anime": 1,
+      "kdrama": 31
+    }
+  },
+  "entries": [
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "taken-3",
+      "url": "https://idflix.my.id/movie/taken-3"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-wrecking-crew",
+      "url": "https://idflix.my.id/movie/the-wrecking-crew"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "old",
+      "url": "https://idflix.my.id/movie/old"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "king-arthur-legend-of-the-sword",
+      "url": "https://idflix.my.id/movie/king-arthur-legend-of-the-sword"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "men-in-black-international",
+      "url": "https://idflix.my.id/movie/men-in-black-international"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "chappie",
+      "url": "https://idflix.my.id/movie/chappie"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-morrigan",
+      "url": "https://idflix.my.id/movie/the-morrigan"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "afterlight",
+      "url": "https://idflix.my.id/movie/afterlight"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-tasters",
+      "url": "https://idflix.my.id/movie/the-tasters"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "our-girls",
+      "url": "https://idflix.my.id/movie/our-girls"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-island",
+      "url": "https://idflix.my.id/movie/the-island"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "talk-to-me",
+      "url": "https://idflix.my.id/movie/talk-to-me"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-kings-man",
+      "url": "https://idflix.my.id/movie/the-kings-man"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "kingsman-the-golden-circle",
+      "url": "https://idflix.my.id/movie/kingsman-the-golden-circle"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "kingsman-the-secret-service",
+      "url": "https://idflix.my.id/movie/kingsman-the-secret-service"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "operation-fortune-ruse-de-guerre",
+      "url": "https://idflix.my.id/movie/operation-fortune-ruse-de-guerre"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "kung-fu-panda-3",
+      "url": "https://idflix.my.id/movie/kung-fu-panda-3"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "kung-fu-panda-2",
+      "url": "https://idflix.my.id/movie/kung-fu-panda-2"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "kung-fu-panda-4",
+      "url": "https://idflix.my.id/movie/kung-fu-panda-4"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "kung-fu-panda",
+      "url": "https://idflix.my.id/movie/kung-fu-panda"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "whiplash",
+      "url": "https://idflix.my.id/movie/whiplash"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "se7en",
+      "url": "https://idflix.my.id/movie/se7en"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "a-silent-voice-the-movie",
+      "url": "https://idflix.my.id/movie/a-silent-voice-the-movie"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "howls-moving-castle",
+      "url": "https://idflix.my.id/movie/howls-moving-castle"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-empire-strikes-back",
+      "url": "https://idflix.my.id/movie/the-empire-strikes-back"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "spider-man-into-the-spider-verse",
+      "url": "https://idflix.my.id/movie/spider-man-into-the-spider-verse"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "once-upon-a-time-in-america",
+      "url": "https://idflix.my.id/movie/once-upon-a-time-in-america"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "gabriels-inferno",
+      "url": "https://idflix.my.id/movie/gabriels-inferno"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "one-flew-over-the-cuckoos-nest",
+      "url": "https://idflix.my.id/movie/one-flew-over-the-cuckoos-nest"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "psycho",
+      "url": "https://idflix.my.id/movie/psycho"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "impossible-things",
+      "url": "https://idflix.my.id/movie/impossible-things"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "city-of-god",
+      "url": "https://idflix.my.id/movie/city-of-god"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "weapons",
+      "url": "https://idflix.my.id/movie/weapons"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "anaconda",
+      "url": "https://idflix.my.id/movie/anaconda"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "life-is-beautiful",
+      "url": "https://idflix.my.id/movie/life-is-beautiful"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "grave-of-the-fireflies",
+      "url": "https://idflix.my.id/movie/grave-of-the-fireflies"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "seven-samurai",
+      "url": "https://idflix.my.id/movie/seven-samurai"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "goodfellas",
+      "url": "https://idflix.my.id/movie/goodfellas"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "forrest-gump",
+      "url": "https://idflix.my.id/movie/forrest-gump"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "interstellar",
+      "url": "https://idflix.my.id/movie/interstellar"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "your-name",
+      "url": "https://idflix.my.id/movie/your-name"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "pulp-fiction",
+      "url": "https://idflix.my.id/movie/pulp-fiction"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "parasite",
+      "url": "https://idflix.my.id/movie/parasite"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-green-mile",
+      "url": "https://idflix.my.id/movie/the-green-mile"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "dilwale-dulhania-le-jayenge",
+      "url": "https://idflix.my.id/movie/dilwale-dulhania-le-jayenge"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-dark-knight",
+      "url": "https://idflix.my.id/movie/the-dark-knight"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "spirited-away",
+      "url": "https://idflix.my.id/movie/spirited-away"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "12-angry-men",
+      "url": "https://idflix.my.id/movie/12-angry-men"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "schindlers-list",
+      "url": "https://idflix.my.id/movie/schindlers-list"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-godfather-part-ii",
+      "url": "https://idflix.my.id/movie/the-godfather-part-ii"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-godfather",
+      "url": "https://idflix.my.id/movie/the-godfather"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-shawshank-redemption",
+      "url": "https://idflix.my.id/movie/the-shawshank-redemption"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "five-nights-at-freddys",
+      "url": "https://idflix.my.id/movie/five-nights-at-freddys"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "five-nights-at-freddys-2",
+      "url": "https://idflix.my.id/movie/five-nights-at-freddys-2"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "rental-family",
+      "url": "https://idflix.my.id/movie/rental-family"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "omniscient-reader-the-prophecy",
+      "url": "https://idflix.my.id/movie/omniscient-reader-the-prophecy"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "people-we-meet-on-vacation",
+      "url": "https://idflix.my.id/movie/people-we-meet-on-vacation"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "war-of-the-worlds",
+      "url": "https://idflix.my.id/movie/war-of-the-worlds"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "demon-slayer-kimetsu-no-yaiba-infinity-castle",
+      "url": "https://idflix.my.id/movie/demon-slayer-kimetsu-no-yaiba-infinity-castle"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "trap-house",
+      "url": "https://idflix.my.id/movie/trap-house"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "icefall",
+      "url": "https://idflix.my.id/movie/icefall"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-confession",
+      "url": "https://idflix.my.id/movie/the-confession"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "pirates-of-the-caribbean-dead-men-tell-no-tales",
+      "url": "https://idflix.my.id/movie/pirates-of-the-caribbean-dead-men-tell-no-tales"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "pirates-of-the-caribbean-at-worlds-end",
+      "url": "https://idflix.my.id/movie/pirates-of-the-caribbean-at-worlds-end"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "pirates-of-the-caribbean-dead-mans-chest",
+      "url": "https://idflix.my.id/movie/pirates-of-the-caribbean-dead-mans-chest"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "pirates-of-the-caribbean-on-stranger-tides",
+      "url": "https://idflix.my.id/movie/pirates-of-the-caribbean-on-stranger-tides"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "pirates-of-the-caribbean-the-curse-of-the-black-pearl",
+      "url": "https://idflix.my.id/movie/pirates-of-the-caribbean-the-curse-of-the-black-pearl"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "in-time",
+      "url": "https://idflix.my.id/movie/in-time"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-lord-of-the-rings-the-return-of-the-king",
+      "url": "https://idflix.my.id/movie/the-lord-of-the-rings-the-return-of-the-king"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-lord-of-the-rings-the-two-towers",
+      "url": "https://idflix.my.id/movie/the-lord-of-the-rings-the-two-towers"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "a-working-man",
+      "url": "https://idflix.my.id/movie/a-working-man"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-lord-of-the-rings-the-fellowship-of-the-ring",
+      "url": "https://idflix.my.id/movie/the-lord-of-the-rings-the-fellowship-of-the-ring"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "venom-1768469114348",
+      "url": "https://idflix.my.id/movie/venom-1768469114348"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "avatar-fire-and-ash",
+      "url": "https://idflix.my.id/movie/avatar-fire-and-ash"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "avatar-the-way-of-water",
+      "url": "https://idflix.my.id/movie/avatar-the-way-of-water"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "avatar",
+      "url": "https://idflix.my.id/movie/avatar"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "real-steel",
+      "url": "https://idflix.my.id/movie/real-steel"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "nice-view",
+      "url": "https://idflix.my.id/movie/nice-view"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "fist-fight",
+      "url": "https://idflix.my.id/movie/fist-fight"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "edward-scissorhands",
+      "url": "https://idflix.my.id/movie/edward-scissorhands"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "red-one",
+      "url": "https://idflix.my.id/movie/red-one"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "alita-battle-angel",
+      "url": "https://idflix.my.id/movie/alita-battle-angel"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "venom-the-last-dance",
+      "url": "https://idflix.my.id/movie/venom-the-last-dance"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "venom-let-there-be-carnage",
+      "url": "https://idflix.my.id/movie/venom-let-there-be-carnage"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "venom",
+      "url": "https://idflix.my.id/movie/venom"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "apocalypto",
+      "url": "https://idflix.my.id/movie/apocalypto"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "harry-potter-and-the-deathly-hallows-part-2",
+      "url": "https://idflix.my.id/movie/harry-potter-and-the-deathly-hallows-part-2"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "harry-potter-and-the-deathly-hallows-part-1",
+      "url": "https://idflix.my.id/movie/harry-potter-and-the-deathly-hallows-part-1"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "harry-potter-and-the-half-blood-prince",
+      "url": "https://idflix.my.id/movie/harry-potter-and-the-half-blood-prince"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "harry-potter-and-the-order-of-the-phoenix",
+      "url": "https://idflix.my.id/movie/harry-potter-and-the-order-of-the-phoenix"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "harry-potter-and-the-goblet-of-fire",
+      "url": "https://idflix.my.id/movie/harry-potter-and-the-goblet-of-fire"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "harry-potter-and-the-prisoner-of-azkaban",
+      "url": "https://idflix.my.id/movie/harry-potter-and-the-prisoner-of-azkaban"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "harry-potter-and-the-philosophers-stone",
+      "url": "https://idflix.my.id/movie/harry-potter-and-the-philosophers-stone"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "sisu-road-to-revenge",
+      "url": "https://idflix.my.id/movie/sisu-road-to-revenge"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "vivarium",
+      "url": "https://idflix.my.id/movie/vivarium"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "the-kid-who-would-be-king",
+      "url": "https://idflix.my.id/movie/the-kid-who-would-be-king"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "dune-part-two",
+      "url": "https://idflix.my.id/movie/dune-part-two"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "dune",
+      "url": "https://idflix.my.id/movie/dune"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "rebel-moon-part-one-a-child-of-fire",
+      "url": "https://idflix.my.id/movie/rebel-moon-part-one-a-child-of-fire"
+    },
+    {
+      "source": "idflix",
+      "type": "movie",
+      "slug": "rebel-moon-part-two-the-scargiver",
+      "url": "https://idflix.my.id/movie/rebel-moon-part-two-the-scargiver"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "pending-train",
+      "url": "https://idflix.my.id/series/pending-train"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "the-twilight-zone",
+      "url": "https://idflix.my.id/series/the-twilight-zone"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "doctor-who",
+      "url": "https://idflix.my.id/series/doctor-who"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "peacemaker",
+      "url": "https://idflix.my.id/series/peacemaker"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "the-gifted",
+      "url": "https://idflix.my.id/series/the-gifted"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "it-welcome-to-derry",
+      "url": "https://idflix.my.id/series/it-welcome-to-derry"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "the-walking-dead",
+      "url": "https://idflix.my.id/series/the-walking-dead"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "creeped-out",
+      "url": "https://idflix.my.id/series/creeped-out"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "breaking-bad",
+      "url": "https://idflix.my.id/series/breaking-bad"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "the-pitt",
+      "url": "https://idflix.my.id/series/the-pitt"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "xiangbei-regret",
+      "url": "https://idflix.my.id/series/xiangbei-regret"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "the-ranch",
+      "url": "https://idflix.my.id/series/the-ranch"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "forever-young",
+      "url": "https://idflix.my.id/series/forever-young"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "family-guy",
+      "url": "https://idflix.my.id/series/family-guy"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "high-potential",
+      "url": "https://idflix.my.id/series/high-potential"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "tehran",
+      "url": "https://idflix.my.id/series/tehran"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "animal-control",
+      "url": "https://idflix.my.id/series/animal-control"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "final-space",
+      "url": "https://idflix.my.id/series/final-space"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "gilmore-girls",
+      "url": "https://idflix.my.id/series/gilmore-girls"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "loving-strangers",
+      "url": "https://idflix.my.id/series/loving-strangers"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "upload",
+      "url": "https://idflix.my.id/series/upload"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "dark-matter",
+      "url": "https://idflix.my.id/series/dark-matter"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "banshee",
+      "url": "https://idflix.my.id/series/banshee"
+    },
+    {
+      "source": "idflix",
+      "type": "series",
+      "slug": "stranger-things",
+      "url": "https://idflix.my.id/series/stranger-things"
+    },
+    {
+      "source": "idflix",
+      "type": "anime",
+      "slug": "danshi-koukousei-no-nichijou",
+      "url": "https://idflix.my.id/anime/danshi-koukousei-no-nichijou"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "our-universe",
+      "url": "https://idflix.my.id/kdrama/our-universe"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "big-mouth",
+      "url": "https://idflix.my.id/kdrama/big-mouth"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "moon-river",
+      "url": "https://idflix.my.id/kdrama/moon-river"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "dear-x",
+      "url": "https://idflix.my.id/kdrama/dear-x"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "speed-and-love",
+      "url": "https://idflix.my.id/kdrama/speed-and-love"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "dynamite-kiss",
+      "url": "https://idflix.my.id/kdrama/dynamite-kiss"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "vigilante",
+      "url": "https://idflix.my.id/kdrama/vigilante"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "spring-fever",
+      "url": "https://idflix.my.id/kdrama/spring-fever"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "shine-on-me",
+      "url": "https://idflix.my.id/kdrama/shine-on-me"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "can-this-love-be-translated",
+      "url": "https://idflix.my.id/kdrama/can-this-love-be-translated"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "love-in-the-crossfire",
+      "url": "https://idflix.my.id/kdrama/love-in-the-crossfire"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "to-my-beloved-thief",
+      "url": "https://idflix.my.id/kdrama/to-my-beloved-thief"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "undercover-miss-hong",
+      "url": "https://idflix.my.id/kdrama/undercover-miss-hong"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "positively-yours",
+      "url": "https://idflix.my.id/kdrama/positively-yours"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "no-tail-to-tell",
+      "url": "https://idflix.my.id/kdrama/no-tail-to-tell"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "the-judge-returns",
+      "url": "https://idflix.my.id/kdrama/the-judge-returns"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "eyes-of-the-sky",
+      "url": "https://idflix.my.id/kdrama/eyes-of-the-sky"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "glory-in-shadows",
+      "url": "https://idflix.my.id/kdrama/glory-in-shadows"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "old-street-justice",
+      "url": "https://idflix.my.id/kdrama/old-street-justice"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "river-sunset",
+      "url": "https://idflix.my.id/kdrama/river-sunset"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "secret-by-my-name",
+      "url": "https://idflix.my.id/kdrama/secret-by-my-name"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "the-dream-maker",
+      "url": "https://idflix.my.id/kdrama/the-dream-maker"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "the-red-cradle",
+      "url": "https://idflix.my.id/kdrama/the-red-cradle"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "half-awake",
+      "url": "https://idflix.my.id/kdrama/half-awake"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "goblin",
+      "url": "https://idflix.my.id/kdrama/goblin"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "love-between-lines",
+      "url": "https://idflix.my.id/kdrama/love-between-lines"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "cashero",
+      "url": "https://idflix.my.id/kdrama/cashero"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "surely-tomorrow",
+      "url": "https://idflix.my.id/kdrama/surely-tomorrow"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "the-manipulated",
+      "url": "https://idflix.my.id/kdrama/the-manipulated"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "pro-bono",
+      "url": "https://idflix.my.id/kdrama/pro-bono"
+    },
+    {
+      "source": "idflix",
+      "type": "kdrama",
+      "slug": "taxi-driver",
+      "url": "https://idflix.my.id/kdrama/taxi-driver"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function HeroBanner({ drama }) {
@@ -10,9 +11,11 @@ export default function HeroBanner({ drama }) {
   return (
     <section className="relative w-full h-[60vh] mb-10 overflow-hidden rounded-lg">
 
-      <img
-        src={drama.coverWap}
+      <Image
+        src={drama.coverWap || "/placeholder.png"}
         alt={drama.bookName}
+        fill
+        sizes="100vw"
         className="absolute inset-0 w-full h-full object-cover brightness-50"
       />
 
