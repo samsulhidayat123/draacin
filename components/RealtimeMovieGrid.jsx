@@ -4,8 +4,6 @@ import { useEffect, useState, useTransition } from "react";
 import Link from "next/link";
 import DramaCard from "@/components/DramaCard";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
-
 async function fetchMovies({ page, limit, type, query }) {
   const params = new URLSearchParams({
     page: String(page),
@@ -15,7 +13,7 @@ async function fetchMovies({ page, limit, type, query }) {
   if (type) params.set("type", type);
   if (query) params.set("q", query);
 
-  const res = await fetch(`${API_BASE_URL}/api/movies?${params.toString()}`, {
+  const res = await fetch(`/api/movies?${params.toString()}`, {
     cache: "no-store",
   });
 
@@ -45,7 +43,7 @@ export default function RealtimeMovieGrid({
   useEffect(() => {
     if (!refreshEnabled) return undefined;
 
-    const source = new EventSource(`${API_BASE_URL}/api/movies/stream`);
+    const source = new EventSource("/api/movies/stream");
 
     const refreshMovies = async () => {
       try {
