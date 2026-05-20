@@ -8,6 +8,7 @@ export const CATALOG_FILTERS = [
   { value: "anime", label: "Anime" },
   { value: "dracin", label: "Drama China" },
   { value: "netflix", label: "Netflix" },
+  { value: "film_indo", label: "Film Indo" },
 ];
 
 function buildHref(basePath, { type, query }) {

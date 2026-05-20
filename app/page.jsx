@@ -6,7 +6,7 @@ import CatalogPagination from '@/components/CatalogPagination';
 import RealtimeMovieGrid from '@/components/RealtimeMovieGrid';
 import { getMoviesPage } from '@/lib/movies';
 
-const VALID_TYPES = new Set(["movie", "series", "kdrama", "anime", "dracin", "netflix"]);
+const VALID_TYPES = new Set(["movie", "series", "kdrama", "anime", "dracin", "netflix", "film_indo"]);
 const PAGE_LIMIT = 60;
 
 function typeLabel(type) {
@@ -17,6 +17,7 @@ function typeLabel(type) {
     series: "Series",
     dracin: "Drama China",
     netflix: "Netflix",
+    film_indo: "Film Indo",
   };
 
   return labels[type] || "Semua";
