@@ -6,6 +6,8 @@ export const CATALOG_FILTERS = [
   { value: "series", label: "Series" },
   { value: "kdrama", label: "Kdrama" },
   { value: "anime", label: "Anime" },
+  { value: "dracin", label: "Drama China" },
+  { value: "netflix", label: "Netflix" },
 ];
 
 function buildHref(basePath, { type, query }) {

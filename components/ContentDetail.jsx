@@ -167,12 +167,37 @@ export default function ContentDetail({ item, expectedType }) {
                   >
                     Watch Now
                   </Link>
+                ) : item.source === "tmdb" ? (
+                  <a
+                    href={`https://www.themoviedb.org/tv/${item.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-12 items-center rounded-sm bg-blue-600 px-8 text-sm font-black uppercase tracking-widest text-white hover:bg-blue-500"
+                  >
+                    Lihat di TMDB
+                  </a>
                 ) : (
                   <div className="inline-flex rounded-sm border border-zinc-700 px-6 py-3 text-sm font-black uppercase tracking-widest text-zinc-400">
                     Player belum tersedia: {item.playbackStatus || "unknown"}
                   </div>
                 )}
-                <PlaybackRefreshButton targetId={item.target_id} />
+                {item.source !== "tmdb" && <PlaybackRefreshButton targetId={item.target_id} />}
+              </div>
+            ) : item.source === "tmdb" ? (
+              <div className="space-y-4">
+                {item.overview && (
+                  <p className="max-w-2xl text-sm leading-6 text-zinc-300">
+                    {item.overview}
+                  </p>
+                )}
+                <a
+                  href={`https://www.themoviedb.org/tv/${item.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-12 items-center rounded-sm bg-blue-600 px-8 text-sm font-black uppercase tracking-widest text-white hover:bg-blue-500"
+                >
+                  Lihat di TMDB
+                </a>
               </div>
             ) : (
               <div className="rounded-sm border border-zinc-800 bg-zinc-950 p-5">
@@ -187,7 +212,7 @@ export default function ContentDetail({ item, expectedType }) {
           </div>
         </section>
 
-        {!isMovie && (
+        {!isMovie && item.source !== "tmdb" && (
           <section className="mt-12">
             <h2 className="mb-5 text-2xl font-black uppercase">Episode</h2>
             {episodeCount > 0 ? (
