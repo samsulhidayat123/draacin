@@ -20,10 +20,10 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://image.tmdb.org https://static.tvmaze.com https://cdn.myanimelist.net https://hwztchapter.dramaboxdb.com",
+      "img-src 'self' data: blob: https://image.tmdb.org https://gold-tmdb.b-cdn.net https://static.tvmaze.com https://cdn.myanimelist.net https://hwztchapter.dramaboxdb.com",
       "font-src 'self' data:",
       "connect-src 'self' https://idflix.my.id https://api.sansekai.my.id https://dramabox.sansekai.my.id ws: wss:",
-      `frame-src ${embedHosts}`,
+      `frame-src ${embedHosts} https://www.youtube.com https://youtube.com`,
       "media-src 'self' blob: https://*.dramaboxdb.com",
       "object-src 'none'",
       "base-uri 'self'",
@@ -68,6 +68,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "image.tmdb.org",
+        pathname: "/t/p/**",
+      },
+      {
+        protocol: "https",
+        hostname: "gold-tmdb.b-cdn.net",
         pathname: "/t/p/**",
       },
       {

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getTypeLabel } from "@/lib/contentRoutes";
+import { getPosterUrl } from "@/lib/poster";
 import PlaybackRefreshButton from "@/components/PlaybackRefreshButton";
 
 function releaseYearOf(item) {
@@ -67,12 +67,16 @@ export default function ContentDetail({ item, expectedType }) {
   const releaseYear = releaseYearOf(item);
   const genres = genresOf(item);
   const episodeCount = episodeCountOf(item);
-  const isMovie = item.type === "movie";
+  const isMovie = ["movie", "film_indo"].includes(item.type);
+  const isCineb = item.source === "cineb";
+  const poster = getPosterUrl(item.poster, "/placeholder.png");
+  const sourceUrl = item.detail_url || item.source_url || item.playbackSourceUrl || null;
+  const watchTargetId = item.playbackTargetId || item.target_id;
   const serverCount = Array.isArray(item.playbackServers)
     ? item.playbackServers.length
     : 0;
   const statusLabel = playableLabel(item, serverCount, episodeCount);
-  const canPlayMovie = isMovie && statusLabel === "Bisa Play";
+  const canPlayMovie = isMovie && (statusLabel === "Bisa Play" || Boolean(item.playbackTargetId));
   const episodeGroups = groupedEpisodesOf(item, episodeCount);
   const metadata = [
     ["Tipe", typeLabel],
@@ -96,13 +100,10 @@ export default function ContentDetail({ item, expectedType }) {
 
         <section className="grid gap-8 md:grid-cols-[280px_1fr] md:items-center">
           <div className="relative aspect-[2/3] overflow-hidden rounded-md bg-[#181818] shadow-2xl">
-            <Image
-              src={item.poster || "/placeholder.png"}
+            <img
+              src={poster}
               alt={item.title}
-              fill
-              sizes="(max-width: 768px) 80vw, 280px"
-              className="object-cover"
-              priority
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
 
@@ -162,26 +163,57 @@ export default function ContentDetail({ item, expectedType }) {
               <div>
                 {canPlayMovie ? (
                   <Link
-                    href={`/watch/movie/${item.target_id}?slug=${item.slug}`}
+                    href={`/watch/movie/${watchTargetId}?slug=${item.slug}`}
                     className="inline-flex min-h-12 items-center rounded-sm bg-red-600 px-8 text-sm font-black uppercase tracking-widest text-white hover:bg-red-500"
                   >
                     Watch Now
                   </Link>
                 ) : item.source === "tmdb" ? (
-                  <a
-                    href={`https://www.themoviedb.org/tv/${item.slug}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-12 items-center rounded-sm bg-blue-600 px-8 text-sm font-black uppercase tracking-widest text-white hover:bg-blue-500"
-                  >
-                    Lihat di TMDB
-                  </a>
+                  <div className="space-y-4">
+                    {item.trailer_url ? (
+                      <div className="overflow-hidden rounded-md border border-gray-800">
+                        <div className="aspect-video w-full">
+                          <iframe
+                            src={item.trailer_url}
+                            title={`${item.title} - Trailer`}
+                            className="h-full w-full"
+                            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                            allowFullScreen
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        href={`https://www.themoviedb.org/tv/${item.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-12 items-center rounded-sm bg-blue-600 px-8 text-sm font-black uppercase tracking-widest text-white hover:bg-blue-500"
+                      >
+                        Lihat di TMDB
+                      </a>
+                    )}
+                  </div>
                 ) : (
-                  <div className="inline-flex rounded-sm border border-zinc-700 px-6 py-3 text-sm font-black uppercase tracking-widest text-zinc-400">
-                    Player belum tersedia: {item.playbackStatus || "unknown"}
+                  <div className="flex flex-wrap items-center gap-3">
+                    <div className="inline-flex rounded-sm border border-zinc-700 px-6 py-3 text-sm font-black uppercase tracking-widest text-zinc-400">
+                      Player belum tersedia: {item.playbackStatus || "metadata_only"}
+                    </div>
+                    {sourceUrl && (
+                      <a
+                        href={sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="inline-flex min-h-12 items-center rounded-sm bg-zinc-800 px-6 text-sm font-black uppercase tracking-widest text-white hover:bg-zinc-700"
+                      >
+                        Lihat sumber
+                      </a>
+                    )}
                   </div>
                 )}
-                {item.source !== "tmdb" && <PlaybackRefreshButton targetId={item.target_id} />}
+                {!isCineb && item.source !== "tmdb" && (
+                  <PlaybackRefreshButton targetId={item.target_id} />
+                )}
               </div>
             ) : item.source === "tmdb" ? (
               <div className="space-y-4">
@@ -190,14 +222,29 @@ export default function ContentDetail({ item, expectedType }) {
                     {item.overview}
                   </p>
                 )}
-                <a
-                  href={`https://www.themoviedb.org/tv/${item.slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-12 items-center rounded-sm bg-blue-600 px-8 text-sm font-black uppercase tracking-widest text-white hover:bg-blue-500"
-                >
-                  Lihat di TMDB
-                </a>
+                {item.trailer_url ? (
+                  <div className="overflow-hidden rounded-md border border-gray-800">
+                    <div className="aspect-video w-full">
+                      <iframe
+                        src={item.trailer_url}
+                        title={`${item.title} - Trailer`}
+                        className="h-full w-full"
+                        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <a
+                    href={`https://www.themoviedb.org/tv/${item.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-12 items-center rounded-sm bg-blue-600 px-8 text-sm font-black uppercase tracking-widest text-white hover:bg-blue-500"
+                  >
+                    Lihat di TMDB
+                  </a>
+                )}
               </div>
             ) : (
               <div className="rounded-sm border border-zinc-800 bg-zinc-950 p-5">

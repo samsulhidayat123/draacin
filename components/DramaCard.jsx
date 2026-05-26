@@ -1,8 +1,8 @@
 // components/DramaCard.jsx
 
 import Link from "next/link";
-import Image from "next/image";
 import { getContentHref, getTypeLabel } from "@/lib/contentRoutes";
+import { getPosterUrl } from "@/lib/poster";
 
 function episodeCountOf(drama) {
   if (Array.isArray(drama?.episodes)) return drama.episodes.length;
@@ -13,17 +13,18 @@ function episodeCountOf(drama) {
 
 export default function DramaCard({ drama }) {
 
-  const poster = drama.poster || "/placeholder.jpg";
+  const poster = getPosterUrl(drama.poster, "/placeholder.png");
   const title = drama.title || drama.bookName || "Untitled Film";
   const href = getContentHref(drama);
   const typeLabel = getTypeLabel(drama.type);
+  const isMovieLike = ["movie", "film_indo"].includes(drama.type);
   const episodeCount = episodeCountOf(drama);
   const serverCount = Array.isArray(drama.playbackServers)
     ? drama.playbackServers.length
     : 0;
   const canPlay =
-    drama.type === "movie"
-      ? drama.playable === true || serverCount > 0
+    isMovieLike
+      ? drama.playable === true || serverCount > 0 || Boolean(drama.playbackTargetId)
       : episodeCount > 0 || drama.playable === true;
   const statusLabel = canPlay ? "Bisa Play" : "Belum Tersedia";
 
@@ -35,13 +36,12 @@ export default function DramaCard({ drama }) {
         {/* Poster */}
         <div className="relative aspect-[2/3] w-full">
 
-          <Image
+          <img
             src={poster}
             alt={title}
-            fill
-            sizes="(max-width:768px) 50vw, 20vw"
-            className="object-cover transition duration-500 group-hover:brightness-110"
-            priority={false}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:brightness-110"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent opacity-70" />
@@ -73,7 +73,7 @@ export default function DramaCard({ drama }) {
 
           <div className="mt-2 flex min-h-5 flex-wrap items-center gap-1.5">
             <span className="rounded-sm bg-zinc-900 px-1.5 py-0.5 text-[10px] font-black uppercase text-zinc-400">
-              {drama.type === "movie" ? "Movie" : "Episode"}
+              {isMovieLike ? "Movie" : "Episode"}
             </span>
             <span className="min-w-0 truncate text-[10px] font-semibold uppercase tracking-widest text-zinc-500">
               {episodeCount > 0
