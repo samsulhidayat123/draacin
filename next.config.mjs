@@ -11,6 +11,22 @@ const embedHosts = [
   "https://*.vidoza.net",
   "https://mxdrop.to",
   "https://*.mxdrop.to",
+
+  // VidSrc embed domains
+  "https://vidsrc-embed.ru",
+  "https://*.vidsrc-embed.ru",
+  "https://vidsrc-embed.su",
+  "https://*.vidsrc-embed.su",
+  "https://*.vsrc.su",
+  "https://vsrc.su",
+  "https://*.vidsrc-me.su",
+  "https://vidsrc-me.su",
+  "https://*.vidsrc-me.ru",
+  "https://vidsrc-me.ru",
+  "https://*.vidsrcme.su",
+  "https://vidsrcme.su",
+  "https://*.vidsrcme.ru",
+  "https://vidsrcme.ru",
 ].join(" ");
 
 const securityHeaders = [

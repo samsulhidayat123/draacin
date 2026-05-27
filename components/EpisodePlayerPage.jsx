@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ServerPlayer from "@/components/ServerPlayer";
+import UniversalPlayer from "@/components/UniversalPlayer";
 import { checkIdflixEpisodePlayback } from "@/lib/idflixPlayback";
 import { getContentByTargetIdAndType } from "@/lib/movies";
 
@@ -67,8 +67,9 @@ export default async function EpisodePlayerPage({
           </span>
         </div>
 
-        <ServerPlayer
+        <UniversalPlayer
           servers={playback.playbackServers}
+          directSources={[]}
           title={title}
           sourceUrl={playback.sourceUrl}
         />

@@ -76,7 +76,7 @@ export default function ContentDetail({ item, expectedType }) {
     ? item.playbackServers.length
     : 0;
   const statusLabel = playableLabel(item, serverCount, episodeCount);
-  const canPlayMovie = isMovie && (statusLabel === "Bisa Play" || Boolean(item.playbackTargetId));
+  const canPlayMovie = isMovie && Boolean(watchTargetId);
   const episodeGroups = groupedEpisodesOf(item, episodeCount);
   const metadata = [
     ["Tipe", typeLabel],
@@ -198,6 +198,14 @@ export default function ContentDetail({ item, expectedType }) {
                   <div className="flex flex-wrap items-center gap-3">
                     <div className="inline-flex rounded-sm border border-zinc-700 px-6 py-3 text-sm font-black uppercase tracking-widest text-zinc-400">
                       Player belum tersedia: {item.playbackStatus || "metadata_only"}
+                  {watchTargetId && (
+                    <Link
+                      href={`/watch/movie/${watchTargetId}`}
+                      className="mt-4 inline-flex rounded-sm bg-red-600 px-6 py-3 text-sm font-black uppercase tracking-widest text-white transition hover:bg-red-700"
+                    >
+                      Nonton Sekarang
+                    </Link>
+                  )}
                     </div>
                     {sourceUrl && (
                       <a
@@ -276,22 +284,42 @@ export default function ContentDetail({ item, expectedType }) {
                       {episodes.map((episode) => {
                         const episodeNumber = episode.episodeNumber;
                         const playable = isEpisodePlayable(episode);
+                        const seriesWatchId =
+                          item.target_id ||
+                          item.targetId ||
+                          item.playbackTargetId ||
+                          item.imdbId ||
+                          item.tmdbId ||
+                          item.slug ||
+                          item.id ||
+                          item._id;
+
+                        const resolvedSeriesWatchId =
+                          String(seriesWatchId || "").includes("euphoria")
+                            ? "tt8772296"
+                            : seriesWatchId;
+
+                        const safeSeriesWatchId = encodeURIComponent(
+                          String(resolvedSeriesWatchId || "")
+                        );
+
                         const href =
                           item.type === "series"
-                            ? `/watch/series/${item.target_id}/${seasonNumber}/${episodeNumber}`
-                            : `/watch/${item.type}/${item.target_id}/${episodeNumber}`;
+                            ? `/watch/series/${safeSeriesWatchId}/${seasonNumber}/${episodeNumber}`
+                            : `/watch/${item.type}/${safeSeriesWatchId}/${episodeNumber}`;
                         const className =
                           "flex aspect-video min-h-12 items-center justify-center rounded-sm border text-sm font-black transition";
 
                         if (!playable) {
                           return (
-                            <span
+                            <Link
                               key={`${seasonNumber}-${episodeNumber}`}
-                              className={`${className} border-zinc-900 bg-zinc-950 text-zinc-700`}
-                              title={episode.playbackStatus || "Episode belum tersedia"}
+                              href={href}
+                              className={`${className} border-yellow-700/60 bg-yellow-950/30 text-yellow-400 hover:border-yellow-500 hover:bg-yellow-900/40 hover:text-yellow-200`}
+                              title="Coba buka via VidSrc"
                             >
                               {episodeNumber}
-                            </span>
+                            </Link>
                           );
                         }
 
