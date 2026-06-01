@@ -7,6 +7,7 @@ import {
 import { getMovieByTargetId } from "@/lib/movies";
 import { createVidSrcMovieServers } from "@/lib/vidsrc";
 import { searchTmdbMovieId, slugToSearchTitle } from "@/lib/tmdb";
+import { sortServers } from "@/lib/playerSecurity";
 
 function isValidVidSrcId(id) {
   if (!id) return false;
@@ -148,7 +149,7 @@ async function getWatchData(id, movie, slug) {
   const vidsrcServers = createVidSrcMovieServers(vidsrcMovieId);
 
   if (storedServers.length > 0) {
-    const servers = mergeServers(storedServers, vidsrcServers);
+    const servers = sortServers(mergeServers(storedServers, vidsrcServers));
 
     return {
       servers,
@@ -170,7 +171,7 @@ async function getWatchData(id, movie, slug) {
     };
   });
 
-  const servers = mergeServers(live.playbackServers || [], vidsrcServers);
+  const servers = sortServers(mergeServers(live.playbackServers || [], vidsrcServers));
 
   return {
     servers,

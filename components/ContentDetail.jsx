@@ -17,7 +17,11 @@ function episodeCountOf(item) {
   }
 
   const count = Number(item?.totalEpisodes || item?.chapterCount || 0);
-  return Number.isFinite(count) && count > 0 ? Math.min(count, 60) : 0;
+  if (Number.isFinite(count) && count > 0) return Math.min(count, 60);
+
+  // Jika punya ID TMDB tapi tidak ada info episode, minimal tampilkan 1 tombol (S1 E1) agar bisa di-play
+  const hasExternalId = Boolean(item?.vidsrcId || item?.tmdbId || item?.imdbId || item?.source === "tmdb");
+  return hasExternalId ? 1 : 0;
 }
 
 function genresOf(item) {
@@ -25,9 +29,10 @@ function genresOf(item) {
 }
 
 function playableLabel(item, serverCount, episodeCount) {
+  const hasExternalId = Boolean(item.vidsrcId || item.tmdbId || item.imdbId || item.source === "tmdb");
   const playable =
     item.type === "movie"
-      ? item.playable === true || serverCount > 0
+      ? item.playable === true || serverCount > 0 || hasExternalId
       : episodeCount > 0 || item.playable === true;
 
   return playable ? "Bisa Play" : "Belum Tersedia";
@@ -71,7 +76,16 @@ export default function ContentDetail({ item, expectedType }) {
   const isCineb = item.source === "cineb";
   const poster = getPosterUrl(item.poster, "/placeholder.png");
   const sourceUrl = item.detail_url || item.source_url || item.playbackSourceUrl || null;
-  const watchTargetId = item.playbackTargetId || item.target_id;
+  const watchTargetId =
+    item.playbackTargetId ||
+    item.target_id ||
+    item.targetId ||
+    item.vidsrcId ||
+    item.tmdbId ||
+    item.imdbId ||
+    item.id ||
+    item.slug ||
+    item._id;
   const serverCount = Array.isArray(item.playbackServers)
     ? item.playbackServers.length
     : 0;
@@ -219,11 +233,11 @@ export default function ContentDetail({ item, expectedType }) {
                     )}
                   </div>
                 )}
-                {!isCineb && item.source !== "tmdb" && (
+                {!isCineb && (item.source !== "tmdb" || Boolean(watchTargetId)) && (
                   <PlaybackRefreshButton targetId={item.target_id} />
                 )}
               </div>
-            ) : item.source === "tmdb" ? (
+            ) : item.source === "tmdb" && !watchTargetId && episodeCount === 0 ? (
               <div className="space-y-4">
                 {item.overview && (
                   <p className="max-w-2xl text-sm leading-6 text-zinc-300">
@@ -267,7 +281,7 @@ export default function ContentDetail({ item, expectedType }) {
           </div>
         </section>
 
-        {!isMovie && item.source !== "tmdb" && (
+        {!isMovie && (item.source !== "tmdb" || Boolean(watchTargetId) || episodeCount > 0) && (
           <section className="mt-12">
             <h2 className="mb-5 text-2xl font-black uppercase">Episode</h2>
             {episodeCount > 0 ? (

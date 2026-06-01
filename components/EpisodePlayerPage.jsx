@@ -2,6 +2,9 @@ import Link from "next/link";
 import UniversalPlayer from "@/components/UniversalPlayer";
 import { checkIdflixEpisodePlayback } from "@/lib/idflixPlayback";
 import { getContentByTargetIdAndType } from "@/lib/movies";
+import { createVidSrcEpisodeServers } from "@/lib/vidsrc";
+import { searchTmdbTvId, slugToSearchTitle } from "@/lib/tmdb";
+import { sortServers } from "@/lib/playerSecurity";
 
 function findEpisode(item, seasonNumber, episodeNumber) {
   const episodes = Array.isArray(item?.episodes) ? item.episodes : [];
@@ -13,16 +16,62 @@ function findEpisode(item, seasonNumber, episodeNumber) {
   });
 }
 
+function isValidVidSrcId(id) {
+  if (!id) return false;
+  const value = String(id).trim();
+  return /^tt\d+$/i.test(value) || /^\d+$/.test(value);
+}
+
+async function getVidSrcTvId(id, item) {
+  const candidates = [
+    item?.vidsrcId,
+    item?.imdbId,
+    item?.tmdbId,
+    id,
+  ];
+
+  const directId = candidates.find(isValidVidSrcId);
+  if (directId) return String(directId).trim();
+
+  const title = item?.title || item?.name || item?.slug || id;
+  if (title) {
+    const tmdbId = await searchTmdbTvId(slugToSearchTitle(title));
+    if (tmdbId) {
+      console.log("Resolved TMDB TV ID:", { title, tmdbId });
+      return tmdbId;
+    }
+  }
+  return null;
+}
+
+function mergeServers(...serverGroups) {
+  const seen = new Set();
+  return serverGroups
+    .flat()
+    .filter(Boolean)
+    .filter((server) => {
+      const key = server.embedUrl || server.url || server.name;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
 export default async function EpisodePlayerPage({
   type,
   id,
   season = 1,
   episode,
 }) {
-  const item = await getContentByTargetIdAndType(id, type).catch((error) => {
+  let item = await getContentByTargetIdAndType(id, type).catch((error) => {
     console.error(`Fetch ${type} from MongoDB error:`, error.message);
     return null;
   });
+
+  // Fallback untuk TMDB yang belum masuk ke database
+  if (!item && id) {
+    item = { title: slugToSearchTitle(id) || id, slug: id, type: type };
+  }
 
   if (!item) {
     return (
@@ -39,14 +88,19 @@ export default async function EpisodePlayerPage({
   }
 
   const episodeData = findEpisode(item, season, episode);
-  const playback = episodeData?.episodeId
-    ? await checkIdflixEpisodePlayback(type, episodeData.episodeId)
-    : {
-        playable: false,
-        playbackStatus: "missing_source",
-        playbackServers: [],
-        sourceUrl: null,
-      };
+  
+  let idflixServers = [];
+  let playbackStatus = "no_server";
+  
+  if (episodeData?.episodeId) {
+    const playback = await checkIdflixEpisodePlayback(type, episodeData.episodeId).catch(() => ({}));
+    idflixServers = playback?.playbackServers || [];
+    playbackStatus = playback?.playbackStatus || "no_server";
+  }
+  const vidsrcTvId = await getVidSrcTvId(id, item);
+  const vidsrcServers = createVidSrcEpisodeServers(vidsrcTvId, season, episode);
+  const finalServers = sortServers(mergeServers(idflixServers, vidsrcServers));
+
   const backHref = `/${type}/${item.slug}`;
   const title = `${item.title} Episode ${episode}`;
 
@@ -63,15 +117,15 @@ export default async function EpisodePlayerPage({
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
           <h1 className="text-2xl font-black md:text-4xl">{title}</h1>
           <span className="rounded-sm border border-zinc-800 px-3 py-1 text-xs font-black uppercase tracking-widest text-zinc-400">
-            {playback.playbackStatus}
+            {finalServers.length > 0 ? "available" : playbackStatus}
           </span>
         </div>
 
         <UniversalPlayer
-          servers={playback.playbackServers}
+          servers={finalServers}
           directSources={[]}
           title={title}
-          sourceUrl={playback.sourceUrl}
+          sourceUrl={null}
         />
       </div>
     </main>
